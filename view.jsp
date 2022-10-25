@@ -44,7 +44,7 @@ try{
 	<tr> <th>No  </th> <th>작성자  </th> <th>제목  </th> <th>내용  </th> <th>저장날짜  </th> <th>조회수  </th> <th>파일이름  </th> <th>파일크기  </th></tr>
 	<tr> <td><%=b_id %></td> <td><%=b_name %></td> <td><%=b_title%></td> <td><%=b_content %></td> <td><%=b_date %></td> <td><%=b_view %></td> <td><%=b_filename %> </td><td><%=b_filesize %> </td></tr>
 	</table> <br />
-	<a href="modify.jsp?b_id=<%=b_id%>">정보 수정</a>  <a href="delete.jsp?b_id=<%=b_id%>">정보 삭제</a> <br /> <br />
+	<a href="modify.jsp?b_id=<%=b_id%>">정보 수정</a>  <a href="delete_act.jsp?b_id=<%=b_id%>">정보 삭제</a> <br /> <br />
 <% 	 
 	}
 	pa2.close();
