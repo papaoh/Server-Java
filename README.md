@@ -1,7 +1,13 @@
-# board
+# 서버구축 및 응용
+학교에서 배운 게시판 프로그램
 
-개발환경 IDE: Eclipse
+# 개발 환경
+
+IDE: Eclipse
 서버: Tomcat 7.0
+개발언어: HTML5, CSS, JAVA
+
+# 프로그램 기능
 
 게시판 프로그램
 1. 게시글 작성
