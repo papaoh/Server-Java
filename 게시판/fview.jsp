@@ -58,7 +58,7 @@ try{
 		<tr><td><%=b_id%></td> <td><img src="upload/<%=b_filename%>" height="100"><br /><%=b_filesize%></td>  <td><%=b_title%></td> <td><%=b_name%></td> <td><%=mailtoyou%></td> <td><%=b_date%></td> <td><%=b_view%></td> <td><%=b_content%></td> </tr>
 		</table>
 		<pre> <!-- 작성한 문단 그대로 띄워쓰기, 줄바뀜 출력 -->
-		<a href="modify_pwd.jsp?b_id=<%=b_id%>">공유 정보 수정</a> | <a href="delete_act.jsp?b_id=<%=b_id%>">공유 정보 삭제</a> 
+		<a href="modify.jsp?b_id=<%=b_id%>">공유 정보 수정</a> | <a href="delete_act.jsp?b_id=<%=b_id%>">공유 정보 삭제</a> 
 		</pre>
 		<br /><br /><br />
 		<a href="flist.jsp">정보 공유 목록 페이지</a>
