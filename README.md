@@ -4,11 +4,20 @@
 # 개발 환경
 
 IDE: Eclipse
+
 서버: Tomcat 7.0
+
 개발언어: HTML5, CSS, JAVA
+
 API: DB연동 라이브러리, 파일 업로드 라이브러리
 
+DB 환경세팅
+![image](https://user-images.githubusercontent.com/116075431/198522478-20403f65-6c54-4e57-97ac-288734946677.png)
 
+DB 생성 완료
+![image](https://user-images.githubusercontent.com/116075431/198522545-b45ad5ca-c127-4342-8236-ed2f18a22b8a.png)
+
+-----------------------------------------------------------------------------------------------------------------
 게시판 프로그램
 # 1. 게시글 작성
 ![image](https://user-images.githubusercontent.com/116075431/198518135-2107c99f-fd6f-4ecc-9321-e835748c57c7.png)
