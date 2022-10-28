@@ -1,17 +1,9 @@
 # 서버구축 및 응용
 학교에서 배운 게시판 프로그램
+개발 IDE는 Eclipse를 사용, Tomcat 7.0을 사용하여 서버의 역활을 담당
+Mysql 라이브러리와 파일업로드 라이브러리를 활용하여 DB까지 연동해 게시판 구축
 
 # 개발 환경
-
-IDE: Eclipse
-
-서버: Tomcat 7.0
-
-개발언어: HTML5, CSS, JAVA
-
-API: DB연동 라이브러리, 파일 업로드 라이브러리
-
-DB 환경세팅
 ![image](https://user-images.githubusercontent.com/116075431/198522478-20403f65-6c54-4e57-97ac-288734946677.png)
 
 DB 생성 완료
