@@ -4,37 +4,18 @@
 <%@ page import ="java.io.*" %>
 <%@ page import ="java.util.*" %>
 <% request.setCharacterEncoding("utf-8"); %>
-<% 
-   int b_id = Integer.parseInt(request.getParameter("b_id"));
-   String b_password = request.getParameter("b_password");  // 사용자가 입력한 패스워드를 저장할 공간
-   String password; // DB에 저장된 패스워드를 저장할 변수
-
-   String b_name = null;  // DB의 이름을 저장하기위한 변수 선언(초기화를 안해주면 아래 input value에서 에러남)
+<% String b_name = null;  // DB의 이름을 저장하기위한 변수 선언(초기화를 안해주면 아래 input value에서 에러남)
    String b_title = null;  // DB의 제목을 저장하기위한 변수 선언
    String b_mail = null; // DB의 이메일을 저장하기위한 변수 선언
    String b_content = null; // DB의 내용을 저장하기위한 변수 선언
    String b_pwd = null;     // DB의 비밀번호를 저장하기위한 변수 선언
-   
-// JDBC 드라이버 설정
-   Class.forName("com.mysql.jdbc.Driver");
-   Connection pa = DriverManager.getConnection("jdbc:mysql://localhost:3306/bbsboard?useUnicode=true&characterEncoding=utf8", "pen", "1234");
-   
-   Statement pb1= pa.createStatement();    
-	String query1 = "select b_pwd from mboard where b_id = " + b_id;  // 해당하는 id의 비밀번호 검색
-	// out.print(query1);   
-	ResultSet pb2 = pb1.executeQuery(query1);  
-	if(pb2.next()){  // 만약 해당하는 id에 비밀번호가 있으면
-		password = pb2.getString(1);  // 패스워드 변수에 저장
-	} else{
-		password = "null";   // 패스워드는 null값으로 저장
-	}
-	pb2.close();
-	pb1.close();
-	
-	if(password.equals(b_password)){  //  만약 입력한 패스워드가 동일하다면
-   
+   int b_id = Integer.parseInt(request.getParameter("b_id")); // 번호저장은 String 타입으로 Int형으로 형변환
    // out.println("수정 게시글 번호:" + b_id + "<br />");
-	
+   
+   // JDBC 드라이버 설정
+   Class.forName("com.mysql.jdbc.Driver");
+   // DB 연동
+   Connection pa = DriverManager.getConnection("jdbc:mysql://localhost:3306/bbsboard?useUnicode=true&characterEncoding=utf8", "pen", "1234");
    
    // SQL query문
    Statement pa1 = pa.createStatement();
@@ -49,13 +30,6 @@
    pa2.close();  //  
    pa1.close();  // 쿼리문 실행 종료
    pa.close();   // DB연동 종료
-   } else{  // 만약 동일하지 않다면   비밀번호가 틀렸다는 알림을 출력 후 페이지 이동 %> 
-	    <script> 
-	    alert("비밀번호 불일치");
-	    location.href="flist.jsp";   
-	    </script>
-	<%
-	}
 %>
 <!DOCTYPE html>
 <html>
@@ -64,14 +38,12 @@
 <title>수정 페이지</title>
 </head>
 <body>
-
-<form action="modify_act.jsp" method="post" name="myform" enctype="multipart/form-data">
+<form action="modify_act.jsp" method="post" name="myform">
 <input type="hidden" name="b_id" value="<%=b_id%>">
 <table border="1" collspacing="1" collpadding="5" width="40%">
-<caption>게시글 수정</caption>
-<tr> <th>작성자</th>   <td><input type="text" name="b_name" value="<%=b_name%>" size=52></td> </tr>
-<tr> <th>이메일</th>   <td><input type="text" name="b_mail" value="<%=b_mail%>" size=52></td> </tr>
+<tr> <th>이름</th>   <td><input type="text" name="b_name" value="<%=b_name%>" size=52></td> </tr>
 <tr> <th>제목</th>   <td><input type="text" name="b_title" value="<%=b_title%>" size=52></td> </tr>
+<tr> <th>이메일</th>   <td><input type="text" name="b_mail" value="<%=b_mail%>" size=52></td> </tr>
 <tr> <th>내용</th>   <td><input type="text" name="b_content" value="<%=b_content%>" size=52></td> </tr>
 <tr> <th>비밀번호</th>   <td><input type="password" name="b_pwd" value="<%=b_pwd%>" size=52></td> </tr>
 <tr> <td colspan="2" align="center"> <input type="submit" value="수정 저장"> <input type="reset" value="수정 취소"></td></tr>
