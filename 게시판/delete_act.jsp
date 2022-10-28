@@ -24,7 +24,7 @@ int b_id = Integer.parseInt(request.getParameter("b_id"));
 
 </table>
 </form>
-
+<a href="flist.jsp">파일 리스트 페이지</a> <br />
 
 </body>
 </html>
